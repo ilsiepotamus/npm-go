@@ -5,6 +5,8 @@ go:
 install:
  - make install
 script:
+ - echo ${TRAVIS_BUILD_ID}
+ - echo ${TRAVIS_TAG}
  - VERSION=${TRAVIS_TAG} make release
 deploy:
  provider: releases
