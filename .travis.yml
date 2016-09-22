@@ -4,6 +4,7 @@ go:
  - 1.7.1
 install:
  - make install
+ - echo ${TRAVIS_TAG}
 script:
  - echo ${TRAVIS_BUILD_ID}
  - echo ${TRAVIS_TAG}
@@ -19,3 +20,5 @@ deploy:
  skip_cleanup: true
  on:
   repo: ilsiepotamus/travistest
+  tags: true
+  all_branches: true
