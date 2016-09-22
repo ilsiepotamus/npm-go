@@ -8,6 +8,8 @@ script:
  - echo ${TRAVIS_BUILD_ID}
  - echo ${TRAVIS_TAG}
  - VERSION=${TRAVIS_TAG} make release
+after_success:
+ - echo ${TRAVIS_TAG}
 deploy:
  provider: releases
  api_key:
