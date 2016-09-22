@@ -4,11 +4,12 @@ go:
  - 1.7.1
 
 os:
- - osx
+ - darwin
  - linux
  - windows
  - freebsd
  - openbsd
 
 script:
- - go test -v ./...
+ - echo $TRAVIS_OS_NAME
+ - go build -o "test_"$TRAVIS_OS_NAME
