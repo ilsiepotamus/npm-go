@@ -1,15 +1,22 @@
 language: go
-
-go: 
- - 1.7.1
-
-os:
- - darwin
- - linux
- - windows
- - freebsd
- - openbsd
-
-script:
- - echo $TRAVIS_OS_NAME
- - go build -o "test_"$TRAVIS_OS_NAME
+sudo: false
+go:
+	- 1.7.1
+install:
+	- make install
+notifications:
+	- email: false
+before_deploy:
+	- make release
+deploy:
+  provider: releases
+  api_key:
+    secure: AaisP1tWZrLNbJh0bQoeFy8z1RPBlyEOAr45CMFa9zQzjPStn73rN0fy+rH59oyjccKHLuPvIbuRuQ6lzLyyN0zYZLqyRKFnf3POtROxucgMINrWypZz9oIcIVGcmDeDKaAvYptJnGMbcpcNqM5W0jsPLHCRFgnFMSHo+QEe/jpew50AWaMAkifL3I0+CtmYatsr8lgq3pcZCtm//VgdIs3g9rJStHrH9XTC5nZFGN+Hn6Ol0qHmMvBj5CLDkUK8lYmPGwX0TFrUVtc6Eejvyp5uh2px07pDRX4MjzrZOfMLwbsjikmMvsWAMxUBEAkE8f10kRwhDLf8QhFY4eVocjYh304887a5dygIEAiQuuesSJptAAqe3ieZCv3sNYSrLbMUgTtbtp39k59JbsiJ0OD7PCZ4plL54mQVlF1t2A8lf7rU8Yt0sHTEbg7bFSUv49S4cOLsymowVpW8Sy3tnQ7zjpwkEZxoJgoALsNKO5jE/vz3Zw+O1xLTNDSxjWkW9oodlwWdYqeJpqawRNyNh61iY8NAhZc7TnEZVqs2efG/Y9hgQsCpW1tOATpfy1ot3lRCfZOVVatRWRDDww/G3xwru6vRcBzlhgba0sSW5rPJG180MYHbpm5YG2UgQhj2TvXlL7xkxmyTk+J8ky7f0BfJkD/rygMJISwXfjzH5Lg=
+  file:
+	-	release/travistest-linux-x64.gz
+	-	release/travistest-darwin-x64.gz
+	-	release/travistest-win32-x64.gz
+	-	release/travistest-openbsd-x64.gz
+	-	release/travistest-freebsd-x64.gz
+  on:
+    repo: ilsiepotamus/travistest
