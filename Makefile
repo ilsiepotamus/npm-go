@@ -1,4 +1,4 @@
-filename = travistest
+PROJECT = travistest
 OSES = linux darwin freebsd openbsd
 
 .PHONY: install release test travis
