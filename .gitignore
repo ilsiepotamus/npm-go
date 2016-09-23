@@ -2,7 +2,7 @@
 *.o
 *.a
 *.so
-
+npm-debug.log
 # Folders
 _obj
 _test

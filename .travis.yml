@@ -6,11 +6,6 @@ install:
 - make install
 script:
 - VERSION=${TRAVIS_TAG} make release
-after_deploy:
-- echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
-- echo "init.author.name=Ilsun Park" >> .npmrc
-- echo "init.author.email=ilsun.park@gmail.com" >> .npmrc
-- npm publish --access=public
 deploy:
   provider: releases
   api_key:

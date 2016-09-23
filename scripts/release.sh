@@ -61,4 +61,9 @@ git rebase master
 git commit -am "Update version number in pacakge.json to $new"
 git push
 
+printf "\nPublishing to NPM...\n"
+npm login
+npm publish --access=public
+npm logout
+
 printf "\nDone! Bye.\n\n"
