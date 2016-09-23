@@ -5,30 +5,31 @@ const path = require('path');
 const zlib = require('zlib');
 
 var pkg = "travistest";
-var ver = "vlatest";
+var repo = "ilsiepotamus";
+var project = "travistest";
+// get the version number, or use "latest"
+var ver = process.argv[2] || "latest";
 var platform = os.platform();
 var arch = os.arch();
 var zipfile = pkg + "-" + ver + "-" + platform + "-" + arch + ".gz";
-var repo = "https://github.com/ilsiepotamus/travistest/releases/download/"
+var repo = "https://github.com/" + repo + "/" + project + "/releases/download/"
 var url = repo + ver + "/" + zipfile;
 var retry = 0;
 // the .prg is there only because windows is horrible.
 var writeto = "./node/bin/" + pkg + ".prg";
 
-// get the version number, or use "latest"
-var ver = process.argv[2] || "latest";
 
 // create a bin directory if one doesn't exist
-fs.access("./bin", (err) => {
+fs.access("./node/bin", (err) => {
   if (err) {
     if (err.code === "ENOENT") {
       console.log('creating bin directory');
-      fs.mkdirSync("./bin");
+      fs.mkdirSync("./node/bin");
     } else {
       throw err;
     }
   } else {
-    console.log('bin directory already exists');
+    console.log('node/bin directory already exists');
   };
 });
 
