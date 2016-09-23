@@ -20,5 +20,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: ilsiepotamus/travistest
-    tags: true
     branch: master
+    tags: true
