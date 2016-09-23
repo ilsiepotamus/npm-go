@@ -23,8 +23,3 @@ deploy:
     repo: ilsiepotamus/travistest
     tags: true
     branch: master
-      secure: XOYNaXx6Y/NsJbrBpdBJZc19erzLlA5kM/z2CNqpVDTDr+exMJxqyCCIvUZjXnq9J+0lfUGDBNKS5PcVGHJXq3IRsBOx3ONOKHZBmiJ4APgx1dS6RMxPQAIeO7bu/cK/hGaPglBtaowpcikxa0U8aBzc6sbNk95rpnNU+B9+g/9MF9aNa/KYiXxgfM8OFA1RG7qrPW77DL1MM955bBo/ANN0imIcX6/CPzGih5TlzZ9cogsKF+PMX1szeD9qiP2OxOU0D7lnFytsZc0hZ8ruk97g/tIOwtW9Ytyhcbz3OFM8UFGDZcsXJfwO0G3Paw6aG1ZWlEXw6cLbZcGND7vGRw5za5uqiOK5bzn3C8rUvGKodxLLAFPBDsKDxmuLQhHYkOxve6NnSd3nAxZDbiVEu3wuq0iK5ZfuxzeQgDEYqrf/sbuElro/I1Ycsi4LTfPONqvzxud45NkKxucxN53KZ75+1jMahYdLgSfjlI2k2b53X1go9p/L79VRb97nF5AtuhsxeoEdFkLJ8Jza8XqGEj57Pjnp6ogx108B8Fau7rab4iyPtmbJ6wo/GIhbm57FSqFuERMSA1jm4guVxD/KB875P8Nfubg8zZb5VRo2lfZAv7xU5T3Byp+yJufo/g2AdmNoWvV3mzGA6v9aL4hHYtrIQX7vyP1bqGeSISk7x1Y=
-    on:
-      repo: ilsiepotamus/travistest
-      tags: true
-      branch: master
