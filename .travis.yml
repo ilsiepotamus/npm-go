@@ -1,19 +1,27 @@
 language: go
 sudo: false
 go:
- - 1.7.1
+- 1.7.1
 install:
- - make install
+- make install
 script:
- - VERSION=${TRAVIS_TAG} make release
+- VERSION=${TRAVIS_TAG} make release
 deploy:
- provider: releases
- api_key:
-  secure: AaisP1tWZrLNbJh0bQoeFy8z1RPBlyEOAr45CMFa9zQzjPStn73rN0fy+rH59oyjccKHLuPvIbuRuQ6lzLyyN0zYZLqyRKFnf3POtROxucgMINrWypZz9oIcIVGcmDeDKaAvYptJnGMbcpcNqM5W0jsPLHCRFgnFMSHo+QEe/jpew50AWaMAkifL3I0+CtmYatsr8lgq3pcZCtm//VgdIs3g9rJStHrH9XTC5nZFGN+Hn6Ol0qHmMvBj5CLDkUK8lYmPGwX0TFrUVtc6Eejvyp5uh2px07pDRX4MjzrZOfMLwbsjikmMvsWAMxUBEAkE8f10kRwhDLf8QhFY4eVocjYh304887a5dygIEAiQuuesSJptAAqe3ieZCv3sNYSrLbMUgTtbtp39k59JbsiJ0OD7PCZ4plL54mQVlF1t2A8lf7rU8Yt0sHTEbg7bFSUv49S4cOLsymowVpW8Sy3tnQ7zjpwkEZxoJgoALsNKO5jE/vz3Zw+O1xLTNDSxjWkW9oodlwWdYqeJpqawRNyNh61iY8NAhZc7TnEZVqs2efG/Y9hgQsCpW1tOATpfy1ot3lRCfZOVVatRWRDDww/G3xwru6vRcBzlhgba0sSW5rPJG180MYHbpm5YG2UgQhj2TvXlL7xkxmyTk+J8ky7f0BfJkD/rygMJISwXfjzH5Lg=
- file_glob: true
- file: release/*
- skip_cleanup: true
- on:
-  repo: ilsiepotamus/travistest
-  tags: true
-  branch: master
+  - provider: releases
+    api_key:
+      secure: AaisP1tWZrLNbJh0bQoeFy8z1RPBlyEOAr45CMFa9zQzjPStn73rN0fy+rH59oyjccKHLuPvIbuRuQ6lzLyyN0zYZLqyRKFnf3POtROxucgMINrWypZz9oIcIVGcmDeDKaAvYptJnGMbcpcNqM5W0jsPLHCRFgnFMSHo+QEe/jpew50AWaMAkifL3I0+CtmYatsr8lgq3pcZCtm//VgdIs3g9rJStHrH9XTC5nZFGN+Hn6Ol0qHmMvBj5CLDkUK8lYmPGwX0TFrUVtc6Eejvyp5uh2px07pDRX4MjzrZOfMLwbsjikmMvsWAMxUBEAkE8f10kRwhDLf8QhFY4eVocjYh304887a5dygIEAiQuuesSJptAAqe3ieZCv3sNYSrLbMUgTtbtp39k59JbsiJ0OD7PCZ4plL54mQVlF1t2A8lf7rU8Yt0sHTEbg7bFSUv49S4cOLsymowVpW8Sy3tnQ7zjpwkEZxoJgoALsNKO5jE/vz3Zw+O1xLTNDSxjWkW9oodlwWdYqeJpqawRNyNh61iY8NAhZc7TnEZVqs2efG/Y9hgQsCpW1tOATpfy1ot3lRCfZOVVatRWRDDww/G3xwru6vRcBzlhgba0sSW5rPJG180MYHbpm5YG2UgQhj2TvXlL7xkxmyTk+J8ky7f0BfJkD/rygMJISwXfjzH5Lg=
+    file_glob: true
+    file: release/*
+    skip_cleanup: true
+    on:
+      repo: ilsiepotamus/travistest
+      tags: true
+      branch: master
+  - provider: npm
+    email: ilsun.park@gmail.com
+    api_key:
+      secure: XOYNaXx6Y/NsJbrBpdBJZc19erzLlA5kM/z2CNqpVDTDr+exMJxqyCCIvUZjXnq9J+0lfUGDBNKS5PcVGHJXq3IRsBOx3ONOKHZBmiJ4APgx1dS6RMxPQAIeO7bu/cK/hGaPglBtaowpcikxa0U8aBzc6sbNk95rpnNU+B9+g/9MF9aNa/KYiXxgfM8OFA1RG7qrPW77DL1MM955bBo/ANN0imIcX6/CPzGih5TlzZ9cogsKF+PMX1szeD9qiP2OxOU0D7lnFytsZc0hZ8ruk97g/tIOwtW9Ytyhcbz3OFM8UFGDZcsXJfwO0G3Paw6aG1ZWlEXw6cLbZcGND7vGRw5za5uqiOK5bzn3C8rUvGKodxLLAFPBDsKDxmuLQhHYkOxve6NnSd3nAxZDbiVEu3wuq0iK5ZfuxzeQgDEYqrf/sbuElro/I1Ycsi4LTfPONqvzxud45NkKxucxN53KZ75+1jMahYdLgSfjlI2k2b53X1go9p/L79VRb97nF5AtuhsxeoEdFkLJ8Jza8XqGEj57Pjnp6ogx108B8Fau7rab4iyPtmbJ6wo/GIhbm57FSqFuERMSA1jm4guVxD/KB875P8Nfubg8zZb5VRo2lfZAv7xU5T3Byp+yJufo/g2AdmNoWvV3mzGA6v9aL4hHYtrIQX7vyP1bqGeSISk7x1Y=
+    on:
+      repo: ilsiepotamus/travistest
+      tags: true
+      branch: master
