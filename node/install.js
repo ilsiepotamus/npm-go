@@ -9,11 +9,11 @@ var ver = "vlatest";
 var platform = os.platform();
 var arch = os.arch();
 var zipfile = pkg + "-" + ver + "-" + platform + "-" + arch + ".gz";
-var repo = "https://github.com/Teradata/covalent-data/releases/download/"
+var repo = "https://github.com/ilsiepotamus/travistest/releases/download/"
 var url = repo + ver + "/" + zipfile;
 var retry = 0;
 // the .prg is there only because windows is horrible.
-var writeto = "./bin/" + pkg + ".prg";
+var writeto = "./node/bin/" + pkg + ".prg";
 
 // get the version number, or use "latest"
 var ver = process.argv[2] || "latest";
