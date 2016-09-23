@@ -1,18 +1,18 @@
 {
   "name": "travistest",
-  "version": "0.1.14",
+  "version": "0.1.16",
   "description": "a golang based mock data server CLI",
   "author": "Ilsun Park <ilsun.park@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "preinstall": "node node/install.js 0.1.14"
+    "preinstall": "node node/install.js 0.1.16"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ilsiepotamus/travistest.git"
   },
   "bin": {
-    "covalent-data": "./node/bin/covalent-data.prg"
+    "covalent-data": "./node/bin/travistest.prg"
   },
   "engines": {
     "node": ">4.4.5"
