@@ -2,13 +2,14 @@ language: go
 sudo: false
 go:
 - 1.7.1
-before_install:
-- echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 install:
 - make install
 script:
 - VERSION=${TRAVIS_TAG} make release
 after_deploy:
+- echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+- echo "init.author.name=Ilsun Park" >> .npmrc
+- echo "init.author.email=ilsun.park@gmail.com" >> .npmrc
 - npm publish --access=public
 deploy:
   provider: releases
@@ -19,5 +20,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: ilsiepotamus/travistest
-    tags: true
     branch: master
+    tags: true
