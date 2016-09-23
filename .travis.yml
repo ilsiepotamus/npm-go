@@ -9,9 +9,7 @@ install:
 script:
 - VERSION=${TRAVIS_TAG} make release
 after_deploy:
-- npm login
 - npm publish --access=public
-- npm logout
 deploy:
   provider: releases
   api_key:
