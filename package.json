@@ -5,7 +5,7 @@
   "author": "Ilsun Park <ilsun.park@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "preinstall": "node node/install.js 0.2.0"
+    "preinstall": "node node/install.js 0.1.0"
   },
   "repository": {
     "type": "git",
