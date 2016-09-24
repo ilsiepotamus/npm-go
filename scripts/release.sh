@@ -1,6 +1,6 @@
 #!/bin/bash
 
-printf "\n\n******** COVALENT DATA ********\n"
+printf "\n\n******** NPM GO ********\n"
 printf "            !!! WARNING !!!\n"
 printf "You are about to create an OFFICIAL release of covalent-data.\n"
 printf "\nREMEMBER THE RULES:\n"
