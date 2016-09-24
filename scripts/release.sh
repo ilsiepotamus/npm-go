@@ -1,16 +1,7 @@
 #!/bin/bash
 
 printf "\n\n******** NPM GO ********\n"
-printf "            !!! WARNING !!!\n"
-printf "You are about to create an OFFICIAL release of covalent-data.\n"
-printf "\nREMEMBER THE RULES:\n"
-printf "* A PR should have been made from the develop branch to master OR\n"
-printf "  from a hotfix branch.\n"
-printf "* This PR should have been merged into master with no issues.\n"
-printf "* In the case of a hotfix, this hotfix should be retroactively\n"
-printf "  applied to develop and any working branches.\n\n"
-printf "IMPORTANT: CHANGELOG.md and any other docs that need to be\n"
-printf "updated manually should be done NOW if you haven't already!\n"
+printf "You are about to create an OFFICIAL release of npm-go.\n"
 printf "\nAre you ready to make this commitment? [y/n] "
 read goforit
 if [ $goforit != 'y' ];
@@ -53,13 +44,6 @@ git tag $new
 
 printf "\nPushing everything to github...\n"
 git push --tags origin master
-
-printf "\nRebasing develop with master version updates...\n"
-git checkout develop
-git pull
-git rebase master
-git commit -am "Update version number in pacakge.json to $new"
-git push
 
 printf "\nPublishing to NPM...\n"
 npm login
