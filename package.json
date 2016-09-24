@@ -1,11 +1,11 @@
 {
   "name": "npm-go",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "an example of how to create an npm package with a golang executable",
   "author": "Ilsun Park <ilsun.park@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "preinstall": "node node/install.js 0.1.0"
+    "preinstall": "node node/install.js 0.1.1"
   },
   "repository": {
     "type": "git",
