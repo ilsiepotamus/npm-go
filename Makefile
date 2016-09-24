@@ -1,10 +1,13 @@
-PROJECT = travistest
+PROJECT = npm-go
 OSES = linux darwin freebsd openbsd
 
-.PHONY: install release test travis
+.PHONY: install release test 
 
 install:
 	go get -t -v ./...
+
+test:
+	go test -v
 
 release:
 	mkdir -p release

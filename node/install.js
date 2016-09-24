@@ -4,19 +4,18 @@ const https = require('https');
 const path = require('path');
 const zlib = require('zlib');
 
-var pkg = "travistest";
 var repo = "ilsiepotamus";
-var project = "travistest";
+var project = "npm-go";
 // get the version number, or use "latest"
 var ver = process.argv[2] || "latest";
 var platform = os.platform();
 var arch = os.arch();
-var zipfile = pkg + "-" + ver + "-" + platform + "-" + arch + ".gz";
+var zipfile = project + "-" + ver + "-" + platform + "-" + arch + ".gz";
 var repo = "https://github.com/" + repo + "/" + project + "/releases/download/"
 var url = repo + ver + "/" + zipfile;
 var retry = 0;
 // the .prg is there only because windows is horrible.
-var writeto = "./node/bin/" + pkg + ".prg";
+var writeto = "./node/bin/" + project + ".prg";
 
 
 // create a bin directory if one doesn't exist
