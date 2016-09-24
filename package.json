@@ -12,7 +12,7 @@
     "url": "https://github.com/ilsiepotamus/npm-go.git"
   },
   "bin": {
-    "npm-go": "./node/bin/travistest.prg"
+    "npm-go": "./node/bin/npm-go.prg"
   },
   "engines": {
     "node": ">4.4.5"
